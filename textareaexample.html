@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<title>Text Area</title>
+</head>
+<body>
+<h1 style="text-align: center;">Text Area</h1>
+<form>
+<br>Comment<br>
+<textarea id="demo1" name="message" cols="30" rows="10" title="Add a Comment" placeholder="Add a comment">
+</textarea>
+<p>
+<input type="button" value="Get Comment" onclick="getComment()" />
+<input type="reset" value="Reset" onclick="emptyComment()" />
+<p id="demo2"></p>
+</form>
+<script>
+function getComment()
+{
+	var x;
+	x = document.getElementById("demo1").value;
+	var txt = "";
+	txt += "You have entered " + x + "<br>";
+	txt += "Upper Case Version is " + x.toUpperCase() + "<br>";
+	txt += "Lower Case Version is " + x.toLowerCase() + "<br>";
+	txt += "Length is " + x.length;
+	document.getElementById("demo2").innerHTML = txt;
+}
+
+function emptyComment()
+{
+	document.getElementById("demo2").innerHTML = "Comment is empty";
+}
+</script>
+</body>
+</html>
